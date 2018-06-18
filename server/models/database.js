@@ -1,6 +1,7 @@
 const pg = require('pg');
 //const connectionString = 'postgres://postgres:postgres@db.cxw9rddrpw9p.us-east-2.rds.amazonaws.com:5432/postgresdb' ;
-const connectionString = process.env.DATABASE_URL;
+//const connectionString = process.env.DATABASE_URL;
+const connectionString = 'postgres://postgres:postgres@localhost:5432/todo';
 
 const client = new pg.Client(connectionString);
 client.connect();
