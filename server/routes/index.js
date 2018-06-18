@@ -3,7 +3,8 @@ const router = express.Router();
 const pg = require('pg');
 const path = require('path');
 //const connectionString = 'postgres://postgres:postgres@db.cxw9rddrpw9p.us-east-2.rds.amazonaws.com:5432/postgresdb';
-const connectionString = process.env.DATABASE_URL;
+//const connectionString = process.env.DATABASE_URL;
+const connectionString = 'postgres://postgres:postgres@192.168.100.134:5432/todo;
 router.get('/', (req, res, next) => {
   res.sendFile(path.join(
     __dirname, '..', '..', 'client', 'views', 'index.html'));
