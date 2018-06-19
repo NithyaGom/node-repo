@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage('Deliver master') {
             when {
-                expression {
-                    return env.BRANCH_NAME == "master"
-                }
+                branch 'master'
             }
             steps {
                 echo "In master branch"
