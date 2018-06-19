@@ -8,6 +8,7 @@ pipeline {
                 }
             script { 
                 echo "in master"
+                sh 'npm start'
              }
         }
         }
