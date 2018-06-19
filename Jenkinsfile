@@ -3,8 +3,10 @@ pipeline {
     stages {
         stage('Deliver master') {
             steps {
-                echo "In master branch"
-                sh 'npm start'
+                script {
+                    echo "In master branch"
+                    sh 'npm start'
+                }
            }
         }
     }
