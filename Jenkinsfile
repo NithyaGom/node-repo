@@ -6,7 +6,7 @@ pipeline {
                 branch 'master'
             }
             steps {
-                sh 'npm install'
+                echo "In master branch"
            }
         }
     }
