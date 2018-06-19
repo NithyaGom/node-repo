@@ -8,14 +8,5 @@ pipeline {
             steps {
                 sh 'npm install'
            }
-        }
-        stage('Deliver dev') {
-            when {
-                branch 'de'
-            }
-            steps {
-                sh 'npm start '
-           }
-        }
     }
 }
