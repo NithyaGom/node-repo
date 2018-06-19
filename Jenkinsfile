@@ -1,9 +1,9 @@
 pipeline {
-    agent any
     stages {
         stage('Deliver master') {
+            agent any
             when {
-                branch 'dev'
+                branch 'master'
             }
             steps {
                 sh 'npm install'
