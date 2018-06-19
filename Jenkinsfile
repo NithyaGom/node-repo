@@ -4,8 +4,11 @@ pipeline {
         stage('Deliver master') {
             steps {
                 script {
-                    echo "In master branch"
-                    sh 'npm start'
+                    if (env.BRANCH_NAME == 'master')
+                    {
+                        echo "In master branch"
+                        sh 'npm start'
+                    }
                 }
            }
         }
