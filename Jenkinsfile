@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        string(defaultValue: "master", description: 'Which branch?', name: 'BRANCH_NAME')
+        string(defaultValue: "dev", description: 'Which branch?', name: 'BRANCH_NAME')
     }
     stages {
         stage('Deliver master') {
