@@ -21,6 +21,7 @@ pipeline {
             }
             steps {
                 sh 'echo "In prod branch"'
+                sh 'npm start'
             }
         }
     }
