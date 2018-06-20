@@ -7,7 +7,7 @@ pipeline {
             }
             steps {
                 sh 'docker build -t node .'
-                sh 'docker run -e "MESSAGE=First instance" -p 8088:8086 -d node'
+                sh 'docker run -e "MESSAGE=First instance" -p 8088:8080 -d node'
             }
         }
         stage('Delivery'){
