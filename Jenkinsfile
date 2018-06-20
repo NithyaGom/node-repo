@@ -7,7 +7,9 @@ pipeline {
             }
         }
         stage('Test') {
-            sh 'npm start'
+            steps {
+                sh 'npm start'
+            }
         }
         stage('Deliver dev') {
             when {
