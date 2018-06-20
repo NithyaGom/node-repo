@@ -4,28 +4,10 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
-            }
-        }
-        stage('Test') {
-            steps {
                 sh 'npm start'
             }
         }
-        stage('Deliver dev') {
-            when {
-                branch 'dev'
-                }
-            steps { 
-                sh 'echo "In dev"'
-             }
-        }
-        stage('Deploy prod'){
-            when {
-                branch 'prod'
-            }
-            steps {
-                sh 'echo "In prod"'
-            }
-        }
+        
+        
     }
 }
