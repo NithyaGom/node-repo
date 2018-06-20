@@ -4,10 +4,19 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
-                sh 'npm start'
+                sh 'node server/model/database.js'
+                sh 'node server/routes/index.js &'
             }
         }
-        
-        
+        stage('Delivery'){
+            steps {
+                sh 'echo "In dev branch"'
+            }
+        }
+        stage('pro'){
+            steps {
+                sh 'echo "In prod branch"'
+            }
+        }
     }
 }
