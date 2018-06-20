@@ -4,7 +4,7 @@ pipeline {
         stage('Build'){
             steps {
                 sh 'npm install'
-                sh 'node server/routes/index.js &'
+                sh 'npm start'
             }
         }
         stage('Deliver dev') {
