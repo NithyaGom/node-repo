@@ -1,14 +1,27 @@
 pipeline {
     agent any
     stages {
-        stage('Deliver master') {
+        stage('Build'){
+            steps {
+                sh 'npm install'
+                sh 'node server/routes/index.js &'
+            }
+        }
+        stage('Deliver dev') {
             when {
-                branch 'master'
+                branch 'dev'
                 }
             steps { 
-                echo "in master"
-                sh 'npm start'
+                sh 'echo "In dev"'
              }
+        }
+        stage('Deploy prod'){
+            when {
+                branch 'prod'
+            }
+            steps {
+                sh 'echo "In prod"'
+            }
         }
         }
     }
