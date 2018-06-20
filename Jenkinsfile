@@ -8,11 +8,17 @@ pipeline {
             }
         }
         stage('Delivery'){
+            when {
+                branch 'dev'
+            }
             steps {
                 sh 'echo "In dev branch"'
             }
         }
         stage('pro'){
+            when {
+                branch 'prod'
+            }
             steps {
                 sh 'echo "In prod branch"'
             }
