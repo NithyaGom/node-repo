@@ -1,3 +1,5 @@
 FROM node
-RUN git clone https://github.com/NithyaGom/node-repo.git
-RUN cd node-repo
+RUN mkdir -p /usr/src/app
+COPY index.js /usr/src/app
+EXPOSE 8086
+CMD [ "node", "/usr/src/app/index" ]
