@@ -1,11 +1,13 @@
 pipeline {
     agent any
     stages {
-        stage {
+        stage('Build') {
             steps {
                 sh 'npm install'
-                sh 'npm start'
             }
+        }
+        stage('Test') {
+            sh 'npm start'
         }
         stage('Deliver dev') {
             when {
