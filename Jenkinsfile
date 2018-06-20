@@ -1,10 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage {
+            when {
+                branch 'master'
+            }
             steps {
-                sh 'npm install'
-                sh 'node server/routes/index.js &'
+                sh 'docker build -t node .'
             }
         }
         stage('Delivery'){
