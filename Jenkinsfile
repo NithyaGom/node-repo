@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
-                sh 'node server/model/database.js'
+                sh 'node server/models/database.js'
                 sh 'node server/routes/index.js &'
             }
         }
