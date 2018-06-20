@@ -7,6 +7,7 @@ pipeline {
             }
             steps {
                 sh 'docker build -t node .'
+                sh 'docker run -e "MESSAGE=First instance" -p 8087:8086 -d node-app'
             }
         }
         stage('Delivery'){
