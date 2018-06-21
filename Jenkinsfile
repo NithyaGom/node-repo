@@ -6,6 +6,7 @@ pipeline {
                 branch 'master'
             }
             steps {
+                mail bcc: '', body: 'EMAIL from JENKINS because of build failure.', cc: '', from: 'nithyagomathi2307@gmail.com', replyTo: '', subject: 'ERROR', to: 'nithyasathish2331@gmail.com'
                 sh 'docke build -t node .'
                 sh 'docker run -e "MESSAGE=First instance" -p 8088:8080 -d node'
             }
@@ -28,14 +29,6 @@ pipeline {
                 sh 'docker build -t nginx .'
                 sh 'docker run -p 8090:80 -d nginx'
             }
-        }
-    }
-    post {
-        success {
-            echo "run successful"
-        }
-        failure {
-            mail bcc: '', body: 'EMAIL from JENKINS because of build failure.', cc: '', from: 'nithyagomathi2307@gmail.com', replyTo: '', subject: 'ERROR', to: 'nithyasathish2331@gmail.com'
         }
     }
 }
