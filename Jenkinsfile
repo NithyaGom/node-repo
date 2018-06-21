@@ -35,7 +35,7 @@ pipeline {
             echo "run successful"
         }
         failure {
-            mail bcc: '', body: 'EMAIL from JENKINS because of build failure.', cc: '', from: 'nithyagomathi2307@gmail.com', replyTo: '', subject: 'ERROR', to: 'nithyasathish2331@gmail.com
+            mail bcc: '', body: 'EMAIL from JENKINS because of build failure.', cc: '', from: 'nithyagomathi2307@gmail.com', replyTo: '', subject: 'ERROR', to: 'nithyasathish2331@gmail.com'
         }
     }
 }
