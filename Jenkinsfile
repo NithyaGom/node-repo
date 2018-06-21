@@ -6,7 +6,7 @@ pipeline {
                 branch 'master'
             }
             steps {
-                sh 'docke build -t node .'
+                sh 'docker build -t node .'
                 sh 'docker run -e "MESSAGE=First instance" -p 8088:8080 -d node'
             }
         }
